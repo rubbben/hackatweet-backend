@@ -25,10 +25,9 @@ router.post('/new', function(req, res) {
 
 // Récupération des 5 derniers tweets (ie les 5 plus récents)
 router.get('/lasttweets', function(req, res) {
-//   Tweet.find().sort({date: -1}).limit(5).then(data => {
-//     res.json(data)
-//   })
-console.log('coucou from route');
+  Tweet.find().sort({date: -1}).limit(5).then(data => {
+    res.json(data)
+  })
 });
 
 // Incrémentation du nb de like d'un tweet
